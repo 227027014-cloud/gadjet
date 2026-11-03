@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Track Order</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="my-orders.html">My Orders</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+    <section class="tracking-heading">
+        <h1>Track Your <span>Order</span></h1>
+        <p>Check your latest order details and status.</p>
+    </section>
+
+    <section class="tracking-container">
+
+        <div class="tracking-card">
+
+            <h2>Order Tracking</h2>
+
+            <div class="tracking-info">
+                <p>Order ID: <strong id="orderId">Not Available</strong></p>
+                <p>Customer: <strong id="customerName">Not Available</strong></p>
+                <p>Total Amount: <strong id="orderTotal">₹0</strong></p>
+            </div>
+
+            <div class="tracking-progress">
+
+                <div class="track-step active">
+                    <div class="track-circle">✓</div>
+                    <h4>Order Placed</h4>
+                    <p>Your order has been received.</p>
+                </div>
+
+                <div class="track-step active">
+                    <div class="track-circle">✓</div>
+                    <h4>Confirmed</h4>
+                    <p>Your order is confirmed.</p>
+                </div>
+
+                <div class="track-step">
+                    <div class="track-circle">3</div>
+                    <h4>Shipped</h4>
+                    <p>Your product is on the way.</p>
+                </div>
+
+                <div class="track-step">
+                    <div class="track-circle">4</div>
+                    <h4>Delivered</h4>
+                    <p>Your order will be delivered.</p>
+                </div>
+
+            </div>
+
+            <a href="my-orders.html" class="tracking-button">
+                View My Orders
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let order = JSON.parse(localStorage.getItem("completedOrder"));
+
+        if (order) {
+            document.getElementById("orderId").textContent =
+                order.orderId || "GZ-" + Date.now();
+
+            document.getElementById("customerName").textContent =
+                order.customer?.name || order.customer?.fullName || "Customer";
+
+            document.getElementById("orderTotal").textContent =
+                "₹" + (order.total || 0);
+        }
+    </script>
+
+</body>
+</html>

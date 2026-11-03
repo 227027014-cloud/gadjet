@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gadget Zone | Mobiles</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">⚡ GADGET ZONE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="mobiles.html">Mobiles</a>
+        <a href="wishlist.html">❤️ Wishlist</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="cart.html" class="cart-btn">🛒 Cart</a>
+    </div>
+
+</header>
+
+
+<section class="product-heading">
+
+    <h1>Explore Our <span>Mobiles</span></h1>
+
+    <p>Discover powerful smartphones with amazing features.</p>
+
+</section>
+
+
+<section class="shopping-section">
+
+    <div class="product-grid">
+
+        <!-- IPHONE 15 -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400">
+
+            <h3>iPhone 15</h3>
+
+            <p>Premium Apple Smartphone</p>
+
+            <h2>₹59,999</h2>
+
+            <button onclick="addToCart({
+                id:1,
+                name:'iPhone 15',
+                price:59999,
+                image:'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:1,
+                name:'iPhone 15',
+                price:59999,
+                image:'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- SAMSUNG GALAXY -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400">
+
+            <h3>Samsung Galaxy</h3>
+
+            <p>Smart Android Smartphone</p>
+
+            <h2>₹42,999</h2>
+
+            <button onclick="addToCart({
+                id:2,
+                name:'Samsung Galaxy',
+                price:42999,
+                image:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:2,
+                name:'Samsung Galaxy',
+                price:42999,
+                image:'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- SMARTPHONE 3 -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400">
+
+            <h3>Premium Smartphone</h3>
+
+            <p>Modern Design Smartphone</p>
+
+            <h2>₹29,999</h2>
+
+            <button onclick="addToCart({
+                id:9,
+                name:'Premium Smartphone',
+                price:29999,
+                image:'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:9,
+                name:'Premium Smartphone',
+                price:29999,
+                image:'https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- SMARTPHONE 4 -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400">
+
+            <h3>Modern Smartphone</h3>
+
+            <p>Stylish Smartphone</p>
+
+            <h2>₹24,999</h2>
+
+            <button onclick="addToCart({
+                id:10,
+                name:'Modern Smartphone',
+                price:24999,
+                image:'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:10,
+                name:'Modern Smartphone',
+                price:24999,
+                image:'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>⚡ GADGET ZONE</h2>
+
+    <p>Your Technology Shopping Destination</p>
+
+    <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

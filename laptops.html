@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gadget Zone | Laptops</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">⚡ GADGET ZONE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="mobiles.html">Mobiles</a>
+        <a href="laptops.html">Laptops</a>
+        <a href="wishlist.html">❤️ Wishlist</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="cart.html" class="cart-btn">🛒 Cart</a>
+    </div>
+
+</header>
+
+
+<section class="product-heading">
+
+    <h1>Explore Our <span>Laptops</span></h1>
+
+    <p>Powerful laptops for work, study and gaming.</p>
+
+</section>
+
+
+<section class="shopping-section">
+
+    <div class="product-grid">
+
+
+        <!-- MACBOOK PRO -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400">
+
+            <h3>MacBook Pro</h3>
+
+            <p>Apple Professional Laptop</p>
+
+            <h2>₹89,999</h2>
+
+            <button onclick="addToCart({
+                id:3,
+                name:'MacBook Pro',
+                price:89999,
+                image:'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:3,
+                name:'MacBook Pro',
+                price:89999,
+                image:'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- HP LAPTOP -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400">
+
+            <h3>HP Laptop</h3>
+
+            <p>High Performance Laptop</p>
+
+            <h2>₹64,999</h2>
+
+            <button onclick="addToCart({
+                id:4,
+                name:'HP Laptop',
+                price:64999,
+                image:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:4,
+                name:'HP Laptop',
+                price:64999,
+                image:'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- GAMING LAPTOP -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400">
+
+            <h3>Gaming Laptop</h3>
+
+            <p>High Speed Gaming Laptop</p>
+
+            <h2>₹74,999</h2>
+
+            <button onclick="addToCart({
+                id:11,
+                name:'Gaming Laptop',
+                price:74999,
+                image:'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:11,
+                name:'Gaming Laptop',
+                price:74999,
+                image:'https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+        <!-- DELL LAPTOP -->
+
+        <div class="shop-product">
+
+            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400">
+
+            <h3>Dell Laptop</h3>
+
+            <p>Professional Work Laptop</p>
+
+            <h2>₹54,999</h2>
+
+            <button onclick="addToCart({
+                id:12,
+                name:'Dell Laptop',
+                price:54999,
+                image:'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400'
+            })">
+                Add to Cart 🛒
+            </button>
+
+            <button class="wish" onclick="addToWishlist({
+                id:12,
+                name:'Dell Laptop',
+                price:54999,
+                image:'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400'
+            })">
+                ♡ Wishlist
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>⚡ GADGET ZONE</h2>
+
+    <p>Your Technology Shopping Destination</p>
+
+    <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

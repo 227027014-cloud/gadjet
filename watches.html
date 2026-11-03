@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Smart Watches</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADING -->
+    <section class="product-heading">
+        <h1>Smart <span>Watches</span></h1>
+        <p>Explore our latest smart watches and stylish timepieces.</p>
+    </section>
+
+    <!-- WATCH PRODUCTS -->
+    <section class="shopping-section">
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="shop-product">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Smart Watch">
+
+                <h3>Smart Watch</h3>
+                <p>₹4,999</p>
+
+                <button onclick="addToCart({
+                    id: 7,
+                    name: 'Smart Watch',
+                    price: 4999,
+                    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500'
+                })">Add to Cart</button>
+
+                <button onclick="addToWishlist({
+                    id: 7,
+                    name: 'Smart Watch',
+                    price: 4999,
+                    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500'
+                })">♡ Wishlist</button>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="shop-product">
+                <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500" alt="Digital Watch">
+
+                <h3>Digital Watch</h3>
+                <p>₹3,499</p>
+
+                <button onclick="addToCart({
+                    id: 8,
+                    name: 'Digital Watch',
+                    price: 3499,
+                    image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500'
+                })">Add to Cart</button>
+
+                <button onclick="addToWishlist({
+                    id: 8,
+                    name: 'Digital Watch',
+                    price: 3499,
+                    image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=500'
+                })">♡ Wishlist</button>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="shop-product">
+                <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500" alt="Premium Smart Watch">
+
+                <h3>Premium Smart Watch</h3>
+                <p>₹6,999</p>
+
+                <button onclick="addToCart({
+                    id: 15,
+                    name: 'Premium Smart Watch',
+                    price: 6999,
+                    image: 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500'
+                })">Add to Cart</button>
+
+                <button onclick="addToWishlist({
+                    id: 15,
+                    name: 'Premium Smart Watch',
+                    price: 6999,
+                    image: 'https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d?w=500'
+                })">♡ Wishlist</button>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="shop-product">
+                <img src="https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500" alt="Fitness Watch">
+
+                <h3>Fitness Watch</h3>
+                <p>₹5,499</p>
+
+                <button onclick="addToCart({
+                    id: 16,
+                    name: 'Fitness Watch',
+                    price: 5499,
+                    image: 'https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500'
+                })">Add to Cart</button>
+
+                <button onclick="addToWishlist({
+                    id: 16,
+                    name: 'Fitness Watch',
+                    price: 5499,
+                    image: 'https://images.unsplash.com/photo-1544117519-31a4b719223d?w=500'
+                })">♡ Wishlist</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

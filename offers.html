@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Special Offers</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="offers.html">Offers</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+    <section class="offers-heading">
+        <h1>Special <span>Offers</span></h1>
+        <p>Grab amazing deals on your favourite gadgets!</p>
+    </section>
+
+    <section class="offers-container">
+
+        <div class="offer-card">
+
+            <div class="discount-badge">20% OFF</div>
+
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500"
+                alt="Smartphone">
+
+            <h2>iPhone 15</h2>
+
+            <p class="old-price">₹74,999</p>
+            <h3>₹59,999</h3>
+
+            <p>Get amazing performance with this special deal.</p>
+
+            <button onclick="addToCart({
+                id: 1,
+                name: 'iPhone 15',
+                price: 59999,
+                image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=500'
+            })">Add to Cart</button>
+
+        </div>
+
+        <div class="offer-card">
+
+            <div class="discount-badge">15% OFF</div>
+
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500"
+                alt="Laptop">
+
+            <h2>HP Laptop</h2>
+
+            <p class="old-price">₹76,999</p>
+            <h3>₹64,999</h3>
+
+            <p>Powerful laptop for work, study and entertainment.</p>
+
+            <button onclick="addToCart({
+                id: 4,
+                name: 'HP Laptop',
+                price: 64999,
+                image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=500'
+            })">Add to Cart</button>
+
+        </div>
+
+        <div class="offer-card">
+
+            <div class="discount-badge">25% OFF</div>
+
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+                alt="Headphones">
+
+            <h2>Wireless Headphones</h2>
+
+            <p class="old-price">₹3,999</p>
+            <h3>₹2,999</h3>
+
+            <p>Enjoy premium sound quality at a special price.</p>
+
+            <button onclick="addToCart({
+                id: 5,
+                name: 'Wireless Headphones',
+                price: 2999,
+                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500'
+            })">Add to Cart</button>
+
+        </div>
+
+        <div class="offer-card">
+
+            <div class="discount-badge">20% OFF</div>
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+                alt="Smart Watch">
+
+            <h2>Smart Watch</h2>
+
+            <p class="old-price">₹6,249</p>
+            <h3>₹4,999</h3>
+
+            <p>Stay connected with this stylish smart watch.</p>
+
+            <button onclick="addToCart({
+                id: 7,
+                name: 'Smart Watch',
+                price: 4999,
+                image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500'
+            })">Add to Cart</button>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

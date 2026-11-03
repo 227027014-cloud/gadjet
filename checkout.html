@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">GADGET<span>ZONE</span></h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </nav>
+
+    <!-- HEADING -->
+    <section class="checkout-heading">
+        <h1>Checkout</h1>
+        <p>Complete your order details</p>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section class="checkout-section">
+
+        <div class="checkout-container">
+
+            <!-- CUSTOMER DETAILS -->
+            <div class="checkout-form">
+
+                <h2>Customer Details</h2>
+
+                <form onsubmit="placeOrder(event)">
+
+                    <label>Full Name</label>
+                    <input type="text" id="customerName"
+                    placeholder="Enter your full name" required>
+
+                    <label>Email Address</label>
+                    <input type="email" id="customerEmail"
+                    placeholder="Enter your email" required>
+
+                    <label>Mobile Number</label>
+                    <input type="tel" id="customerPhone"
+                    placeholder="Enter mobile number"
+                    pattern="[0-9]{10}" maxlength="10" required>
+
+                    <label>Delivery Address</label>
+                    <textarea id="customerAddress"
+                    placeholder="Enter your full address"
+                    required></textarea>
+
+                    <label>City</label>
+                    <input type="text" id="customerCity"
+                    placeholder="Enter your city" required>
+
+                    <label>Pincode</label>
+                    <input type="text" id="customerPincode"
+                    placeholder="Enter 6 digit pincode"
+                    pattern="[0-9]{6}" maxlength="6" required>
+
+                    <button type="submit" class="place-order-btn">
+                        Continue to Payment →
+                    </button>
+
+                </form>
+
+            </div>
+
+            <!-- ORDER SUMMARY -->
+            <div class="checkout-summary">
+
+                <h2>Order Summary</h2>
+
+                <div id="checkoutItems"></div>
+
+                <hr>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="checkoutSubtotal">₹0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery Charge</span>
+                    <span id="checkoutDelivery">₹0</span>
+                </div>
+
+                <hr>
+
+                <div class="summary-row grand-total">
+                    <span>Total Amount</span>
+                    <span id="checkoutTotal">₹0</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>GADGET ZONE</h2>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        let subtotal = 0;
+
+        function displayCheckout() {
+
+            let itemsContainer = document.getElementById("checkoutItems");
+
+            if (cart.length === 0) {
+                itemsContainer.innerHTML = "<p>Your cart is empty!</p>";
+                return;
+            }
+
+            cart.forEach(item => {
+
+                let itemTotal = item.price * item.quantity;
+
+                subtotal += itemTotal;
+
+                itemsContainer.innerHTML += `
+                    <div class="checkout-item">
+                        <div>
+                            <h4>${item.name}</h4>
+                            <p>Quantity: ${item.quantity}</p>
+                        </div>
+
+                        <strong>₹${itemTotal.toLocaleString("en-IN")}</strong>
+                    </div>
+                `;
+
+            });
+
+            let delivery = subtotal >= 50000 ? 0 : 100;
+
+            let total = subtotal + delivery;
+
+            document.getElementById("checkoutSubtotal").innerText =
+                "₹" + subtotal.toLocaleString("en-IN");
+
+            document.getElementById("checkoutDelivery").innerText =
+                "₹" + delivery.toLocaleString("en-IN");
+
+            document.getElementById("checkoutTotal").innerText =
+                "₹" + total.toLocaleString("en-IN");
+
+        }
+
+        function placeOrder(event) {
+
+            event.preventDefault();
+
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                window.location.href = "products.html";
+                return;
+            }
+
+            let customer = {
+
+                name: document.getElementById("customerName").value,
+                email: document.getElementById("customerEmail").value,
+                phone: document.getElementById("customerPhone").value,
+                address: document.getElementById("customerAddress").value,
+                city: document.getElementById("customerCity").value,
+                pincode: document.getElementById("customerPincode").value
+
+            };
+
+            let delivery = subtotal >= 50000 ? 0 : 100;
+
+            let order = {
+                customer: customer,
+                products: cart,
+                total: subtotal + delivery
+            };
+
+            localStorage.setItem("currentOrder", JSON.stringify(order));
+
+            window.location.href = "payment.html";
+
+        }
+
+        displayCheckout();
+
+    </script>
+
+</body>
+</html>

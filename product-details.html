@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <section class="details-heading">
+        <h1>Product <span>Details</span></h1>
+        <p>Discover your favourite gadget.</p>
+    </section>
+
+    <section class="details-container">
+
+        <div class="details-image">
+            <img id="productImage"
+                 src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600"
+                 alt="Product">
+        </div>
+
+        <div class="details-content">
+
+            <h2 id="productName">iPhone 15</h2>
+
+            <h3 id="productPrice">₹59,999</h3>
+
+            <p>
+                Experience the latest technology with premium design,
+                powerful performance and amazing features.
+                Perfect for your everyday digital lifestyle.
+            </p>
+
+            <h4>Product Features</h4>
+
+            <ul>
+                <li>Premium Quality</li>
+                <li>Modern Design</li>
+                <li>High Performance</li>
+                <li>Warranty Available</li>
+            </ul>
+
+            <button onclick="addProductToCart()">Add to Cart</button>
+
+            <button onclick="addProductToWishlist()">♡ Add to Wishlist</button>
+
+            <br><br>
+
+            <a href="products.html" class="continue-shopping">
+                ← Back to Products
+            </a>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+        let selectedProduct = {
+            id: 1,
+            name: "iPhone 15",
+            price: 59999,
+            image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=600"
+        };
+
+        function addProductToCart() {
+            addToCart(selectedProduct);
+        }
+
+        function addProductToWishlist() {
+            addToWishlist(selectedProduct);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">GADGET<span>ZONE</span></h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="cart.html">Cart</a>
+        </div>
+    </nav>
+
+    <!-- REGISTER SECTION -->
+    <section class="auth-section">
+
+        <div class="auth-container">
+
+            <div class="auth-icon">👤</div>
+
+            <h1>Create Account</h1>
+
+            <p class="auth-subtitle">
+                Join Gadget Zone and explore amazing gadgets!
+            </p>
+
+            <form onsubmit="registerAccount(event)">
+
+                <label>Full Name</label>
+
+                <input type="text"
+                id="regName"
+                placeholder="Enter your full name"
+                required>
+
+                <label>Email Address</label>
+
+                <input type="email"
+                id="regEmail"
+                placeholder="Enter your email"
+                required>
+
+                <label>Mobile Number</label>
+
+                <input type="tel"
+                id="regPhone"
+                placeholder="Enter mobile number"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required>
+
+                <label>Password</label>
+
+                <input type="password"
+                id="regPassword"
+                placeholder="Create password"
+                minlength="6"
+                required>
+
+                <label>Confirm Password</label>
+
+                <input type="password"
+                id="regConfirmPassword"
+                placeholder="Confirm password"
+                minlength="6"
+                required>
+
+                <button type="submit" class="auth-button">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+                Already have an account?
+                <a href="login.html">Login Here</a>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>GADGET ZONE</h2>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+
+        function registerAccount(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("regName").value.trim();
+            let email = document.getElementById("regEmail").value.trim();
+            let phone = document.getElementById("regPhone").value;
+            let password = document.getElementById("regPassword").value;
+            let confirmPassword = document.getElementById("regConfirmPassword").value;
+
+            if (password !== confirmPassword) {
+
+                alert("Password and Confirm Password do not match!");
+                return;
+
+            }
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            let existingUser = users.find(function(user) {
+                return user.email.toLowerCase() === email.toLowerCase();
+            });
+
+            if (existingUser) {
+
+                alert("This email is already registered!");
+                return;
+
+            }
+
+            let newUser = {
+
+                name: name,
+                email: email,
+                phone: phone,
+                password: password
+
+            };
+
+            users.push(newUser);
+
+            localStorage.setItem("users", JSON.stringify(users));
+
+            alert("Registration Successful! Please Login.");
+
+            window.location.href = "login.html";
+
+        }
+
+    </script>
+
+</body>
+</html>

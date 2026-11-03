@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | FAQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="my-orders.html">My Orders</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="faq-heading">
+        <h1>Frequently Asked <span>Questions</span></h1>
+        <p>Find answers to your questions about Gadget Zone.</p>
+    </section>
+
+    <section class="faq-container">
+
+        <div class="faq-item">
+            <button class="faq-question">
+                1. What is Gadget Zone?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Gadget Zone is an online gadget shopping website where you can explore and purchase mobiles, laptops, headphones and smart watches.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                2. How can I place an order?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Select your favourite product, add it to your cart, complete checkout and choose your payment method.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                3. Can I add products to Wishlist?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes! You can add your favourite products to Wishlist and view them whenever you want.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                4. What payment methods are available?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Our demo website provides UPI, Card and Cash on Delivery payment options.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                5. How can I track my order?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>You can visit the Order Tracking page to view your order status.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                6. How can I contact customer support?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>You can visit our Contact page and submit your questions or messages.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                7. Can I view my previous orders?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes! Visit the My Orders page to view your previously placed orders.</p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let questions = document.querySelectorAll(".faq-question");
+
+        questions.forEach(function(question) {
+
+            question.addEventListener("click", function() {
+
+                let answer = this.nextElementSibling;
+                let icon = this.querySelector("span");
+
+                if (answer.style.display === "block") {
+                    answer.style.display = "none";
+                    icon.textContent = "+";
+                } else {
+                    answer.style.display = "block";
+                    icon.textContent = "−";
+                }
+
+            });
+
+        });
+    </script>
+
+</body>
+</html>

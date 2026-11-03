@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | My Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="my-orders.html">My Orders</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+
+    <section class="profile-heading">
+        <h1>My <span>Profile</span></h1>
+        <p>Manage your personal account information.</p>
+    </section>
+
+    <section class="profile-container">
+
+        <div class="profile-card">
+
+            <div class="profile-avatar">👤</div>
+
+            <h2 id="profileName">Customer Name</h2>
+            <p id="profileEmail">customer@email.com</p>
+
+            <div class="profile-details">
+
+                <div class="profile-field">
+                    <label>Full Name</label>
+                    <input type="text" id="name">
+                </div>
+
+                <div class="profile-field">
+                    <label>Email Address</label>
+                    <input type="email" id="email" readonly>
+                </div>
+
+                <div class="profile-field">
+                    <label>Phone Number</label>
+                    <input type="tel" id="phone">
+                </div>
+
+            </div>
+
+            <button onclick="updateProfile()">Update Profile</button>
+
+            <button class="logout-btn" onclick="logoutUser()">Logout</button>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+
+        let loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+
+        if (loggedInUser) {
+
+            document.getElementById("name").value = loggedInUser.name || "";
+            document.getElementById("email").value = loggedInUser.email || "";
+            document.getElementById("phone").value = loggedInUser.phone || "";
+
+            document.getElementById("profileName").textContent = loggedInUser.name;
+            document.getElementById("profileEmail").textContent = loggedInUser.email;
+
+        } else {
+
+            alert("Please login first!");
+            window.location.href = "login.html";
+
+        }
+
+        function updateProfile() {
+
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+
+            if (name.trim() === "" || phone.trim() === "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            let index = users.findIndex(user => user.email === loggedInUser.email);
+
+            if (index !== -1) {
+
+                users[index].name = name;
+                users[index].phone = phone;
+
+                localStorage.setItem("users", JSON.stringify(users));
+
+            }
+
+            loggedInUser.name = name;
+            loggedInUser.phone = phone;
+
+            localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
+
+            document.getElementById("profileName").textContent = name;
+
+            alert("Profile updated successfully!");
+
+        }
+
+        function logoutUser() {
+
+            localStorage.removeItem("loggedInUser");
+
+            alert("Logged out successfully!");
+
+            window.location.href = "login.html";
+
+        }
+
+    </script>
+
+</body>
+</html>

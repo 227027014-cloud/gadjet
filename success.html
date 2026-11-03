@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Order Success</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <h2 class="logo">GADGET<span>ZONE</span></h2>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+        </div>
+    </nav>
+
+    <!-- SUCCESS SECTION -->
+    <section class="success-section">
+
+        <div class="success-container">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>Order Placed Successfully!</h1>
+
+            <p class="success-message">
+                Thank you for shopping with Gadget Zone.
+                Your order has been received successfully.
+            </p>
+
+            <div class="success-details">
+
+                <h3>🎉 Order Confirmation</h3>
+
+                <p id="successOrderId"></p>
+
+                <p id="successCustomer"></p>
+
+                <p id="successAmount"></p>
+
+                <p id="successPayment"></p>
+
+            </div>
+
+            <div class="success-buttons">
+
+                <button onclick="window.location.href='products.html'">
+                    Continue Shopping
+                </button>
+
+                <button class="home-button"
+                onclick="window.location.href='index.html'">
+                    Back to Home
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>GADGET ZONE</h2>
+        <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+    </footer>
+
+
+    <script>
+
+        let order = JSON.parse(localStorage.getItem("completedOrder"));
+
+        if (order) {
+
+            document.getElementById("successOrderId").innerText =
+                "Order ID: GZ" + "CONFIRMED";
+
+            document.getElementById("successCustomer").innerText =
+                "Customer: " + order.customer.name;
+
+            document.getElementById("successAmount").innerText =
+                "Total Amount: ₹" + order.total.toLocaleString("en-IN");
+
+            document.getElementById("successPayment").innerText =
+                "Payment Method: " + order.paymentMethod;
+
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gadget Zone | Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">GADGET <span>ZONE</span></div>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="my-orders.html">Orders</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <section class="admin-heading">
+        <h1>Admin <span>Dashboard</span></h1>
+        <p>Manage your Gadget Zone store</p>
+    </section>
+
+    <section class="admin-stats">
+
+        <div class="admin-card">
+            <h3>Total Products</h3>
+            <h2>16</h2>
+        </div>
+
+        <div class="admin-card">
+            <h3>Total Customers</h3>
+            <h2 id="customerCount">0</h2>
+        </div>
+
+        <div class="admin-card">
+            <h3>Total Orders</h3>
+            <h2 id="orderCount">0</h2>
+        </div>
+
+        <div class="admin-card">
+            <h3>Store Status</h3>
+            <h2>Active</h2>
+        </div>
+
+    </section>
+
+    <section class="admin-actions">
+
+        <h2>Store Management</h2>
+
+        <div class="admin-buttons">
+            <a href="products.html">Manage Products</a>
+            <a href="my-orders.html">View Orders</a>
+            <a href="wishlist.html">View Wishlist</a>
+            <a href="contact.html">Customer Messages</a>
+            <a href="feedback.html">Customer Feedback</a>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 Gadget Zone. Admin Panel</p>
+    </footer>
+
+    <script>
+        let users = JSON.parse(localStorage.getItem("users")) || [];
+        let orders = JSON.parse(localStorage.getItem("orderHistory")) || [];
+
+        document.getElementById("customerCount").textContent = users.length;
+        document.getElementById("orderCount").textContent = orders.length;
+    </script>
+
+</body>
+</html>

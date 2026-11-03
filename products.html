@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gadget Zone | Products</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">⚡ GADGET ZONE</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="wishlist.html">❤️ Wishlist</a>
+    </nav>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="cart.html" class="cart-btn">🛒 Cart</a>
+    </div>
+
+</header>
+
+
+<section class="product-heading">
+
+    <h1>Explore Our <span>Gadgets</span></h1>
+
+    <p>Discover the latest technology at amazing prices.</p>
+
+</section>
+
+
+<section class="shopping-section">
+
+    <div class="product-search">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search your favourite gadgets..."
+            oninput="filterProducts()">
+
+    </div>
+
+
+    <div class="filter-buttons">
+
+        <button onclick="filterCategory('All')">All</button>
+        <button onclick="filterCategory('Mobile')">Mobiles</button>
+        <button onclick="filterCategory('Laptop')">Laptops</button>
+        <button onclick="filterCategory('Audio')">Headphones</button>
+        <button onclick="filterCategory('Watch')">Watches</button>
+
+    </div>
+
+
+    <div class="product-grid" id="productContainer">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="shop-product" data-category="Mobile">
+
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80" alt="iPhone 15">
+
+            <h3>iPhone 15</h3>
+            <p>Premium Smartphone</p>
+            <h2>₹59,999</h2>
+
+            <button onclick="addToCart({
+                id: 1,
+                name: 'iPhone 15',
+                price: 59999,
+                image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 1,
+                name: 'iPhone 15',
+                price: 59999,
+                image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="shop-product" data-category="Mobile">
+
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Samsung Galaxy">
+
+            <h3>Samsung Galaxy</h3>
+            <p>Smart Android Phone</p>
+            <h2>₹42,999</h2>
+
+            <button onclick="addToCart({
+                id: 2,
+                name: 'Samsung Galaxy',
+                price: 42999,
+                image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 2,
+                name: 'Samsung Galaxy',
+                price: 42999,
+                image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="shop-product" data-category="Laptop">
+
+            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80" alt="MacBook Pro">
+
+            <h3>MacBook Pro</h3>
+            <p>Professional Laptop</p>
+            <h2>₹89,999</h2>
+
+            <button onclick="addToCart({
+                id: 3,
+                name: 'MacBook Pro',
+                price: 89999,
+                image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 3,
+                name: 'MacBook Pro',
+                price: 89999,
+                image: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="shop-product" data-category="Laptop">
+
+            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80" alt="HP Laptop">
+
+            <h3>HP Laptop</h3>
+            <p>High Performance Laptop</p>
+            <h2>₹64,999</h2>
+
+            <button onclick="addToCart({
+                id: 4,
+                name: 'HP Laptop',
+                price: 64999,
+                image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 4,
+                name: 'HP Laptop',
+                price: 64999,
+                image: 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="shop-product" data-category="Audio">
+
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80" alt="Wireless Headphones">
+
+            <h3>Wireless Headphones</h3>
+            <p>Premium Sound Quality</p>
+            <h2>₹2,999</h2>
+
+            <button onclick="addToCart({
+                id: 5,
+                name: 'Wireless Headphones',
+                price: 2999,
+                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 5,
+                name: 'Wireless Headphones',
+                price: 2999,
+                image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="shop-product" data-category="Audio">
+
+            <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=500&q=80" alt="Wireless Earbuds">
+
+            <h3>Wireless Earbuds</h3>
+            <p>Clear Audio Experience</p>
+            <h2>₹1,999</h2>
+
+            <button onclick="addToCart({
+                id: 6,
+                name: 'Wireless Earbuds',
+                price: 1999,
+                image: 'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 6,
+                name: 'Wireless Earbuds',
+                price: 1999,
+                image: 'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="shop-product" data-category="Watch">
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Smart Watch">
+
+            <h3>Smart Watch</h3>
+            <p>Fitness & Smart Features</p>
+            <h2>₹4,999</h2>
+
+            <button onclick="addToCart({
+                id: 7,
+                name: 'Smart Watch',
+                price: 4999,
+                image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 7,
+                name: 'Smart Watch',
+                price: 4999,
+                image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="shop-product" data-category="Watch">
+
+            <img src="https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=500&q=80" alt="Digital Watch">
+
+            <h3>Digital Watch</h3>
+            <p>Stylish Digital Watch</p>
+            <h2>₹3,499</h2>
+
+            <button onclick="addToCart({
+                id: 8,
+                name: 'Digital Watch',
+                price: 3499,
+                image: 'https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=500&q=80'
+            })">Add to Cart 🛒</button>
+
+            <button class="wish" onclick="addToWishlist({
+                id: 8,
+                name: 'Digital Watch',
+                price: 3499,
+                image: 'https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?auto=format&fit=crop&w=500&q=80'
+            })">♡ Wishlist</button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h2>⚡ GADGET ZONE</h2>
+
+    <p>Your Technology Shopping Destination</p>
+
+    <p>© 2026 Gadget Zone. All Rights Reserved.</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+<script>
+
+function filterCategory(category) {
+
+    document.querySelectorAll(".shop-product").forEach(product => {
+
+        product.style.display =
+            category === "All" || product.dataset.category === category
+            ? "block" : "none";
+
+    });
+
+}
+
+
+function filterProducts() {
+
+    let search = document.getElementById("searchInput")
+        .value.toLowerCase();
+
+    document.querySelectorAll(".shop-product").forEach(product => {
+
+        let name = product.querySelector("h3").innerText.toLowerCase();
+
+        product.style.display =
+            name.includes(search) ? "block" : "none";
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
